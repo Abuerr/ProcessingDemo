@@ -16,7 +16,6 @@ class staticRect {
 
   //绘制静态矩形
   void drawStaticRect() {
-    //方块1 55*55 x:29，y:20
     rectMode(CENTER);
     noStroke();//去掉边缘线
     fill(c);
