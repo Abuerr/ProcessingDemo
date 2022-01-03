@@ -32,7 +32,7 @@ void draw() {
 
   background(163, 209, 232);
   //绘制矩形
-  drawLRRect();
+  //drawLRRect();
 
   Move();
 
@@ -43,18 +43,18 @@ void draw() {
   rect(x, y, w, h);
 }
 
-void drawLRRect() {
-  //方块1 55*55 x:29，y:20
-  rectMode(CENTER);
-  noStroke();
-  //rectMode(CORNER);
-  //left
-  fill(c1);
-  rect(x1, y, w1, h);
-  //right
-  fill(c2);
-  rect(x2, y, w1, h);
-}
+//void drawLRRect() {
+//  //方块1 55*55 x:29，y:20
+//  rectMode(CENTER);
+//  noStroke();
+//  //rectMode(CORNER);
+//  //left
+//  fill(c1);
+//  rect(x1, y, w1, h);
+//  //right
+//  fill(c2);
+//  rect(x2, y, w1, h);
+//}
 
 void Move() {
   //更新距离差
