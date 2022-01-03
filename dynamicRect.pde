@@ -9,6 +9,7 @@ class dynamicRect {
   //运动方形标志
   boolean[] flag = new boolean[2]; //值为true向左/上运动，值为false向右或下运动
   //左右/上下的静态方块
+  
   staticRect[] s = new staticRect[2];
   //距离差
   float[] d;
@@ -57,7 +58,7 @@ class dynamicRect {
     }
   }
 
-  //方形的运动,i为1则左右运动，i为0则上下运动
+  //方形的运动,dir为1则左右运动，dir为0则上下运动
   void moveRect(int dir) {
 
     updateDistance(dir);
