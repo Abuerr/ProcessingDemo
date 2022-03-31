@@ -1,0 +1,39 @@
+//改变x，斜刘海流动，节奏感,无意得到的效果
+String filename;
+import processing.sound.*;
+AudioIn audio;
+Amplitude amp;
+Particle[] particles;
+void setup() {
+  filename = this.getClass().getName();
+
+  size(1000, 1000);
+  audio = new AudioIn(this, 0);
+  audio.start();
+  amp = new Amplitude(this);
+  amp.input(audio);
+
+  //初始化粒子
+  particles = new Particle[100];
+  for (int i=0; i<particles.length; i++) {
+    particles[i]=new Particle(random(width), random(height));
+  }
+}
+
+
+void draw() {
+  //noStroke();
+  //fill(255,10);
+  //rect(0,0,width,height);
+  background(255);
+  
+  float rms = amp.analyze();
+  //float radius = map(rms, 0, 1, 0, 5000);
+  for (int i=0; i<particles.length; i++) {
+    particles[i].update(rms);
+    particles[i].display();
+  }
+}
+void mousePressed() {
+  saveFrame(filename+".jpg");
+}
